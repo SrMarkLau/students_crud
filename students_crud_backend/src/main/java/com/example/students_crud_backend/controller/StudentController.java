@@ -39,14 +39,14 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @Valid @RequestBody StudentDTO studentDTO) {
+    public ResponseEntity<Student> updateStudent(@PathVariable("id") Long id, @Valid @RequestBody StudentDTO studentDTO) {
         return studentService.updateStudent(id, studentDTO)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteStudent(@PathVariable("id") Long id) {
         return studentService.deleteStudent(id)
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.notFound().build();
