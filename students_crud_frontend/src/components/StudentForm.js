@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import StudentService from '../StudentService';
+import StudentService from '../services/StudentService';
 
 function StudentForm({ selectedStudent, onSave, onCancel }) {
   const [name, setName] = useState('');

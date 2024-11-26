@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import StudentService from '../StudentService';
+import StudentService from '../services/StudentService';
 
 function StudentList({ onEdit }) {
   const [students, setStudents] = useState([]);
